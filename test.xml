@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<catalog>
+   {% for object in book_detail %}
+   <book id="{{ object.bookID }}">
+      <author>{{ object.author_name }}</author>
+      <title>{{ object.title }}</title>
+      <genre>{{ object.genre }}</genre>
+      <price>{{ object.price }}</price>
+      <publish_date>{{ object.pub_date }}</publish_date>
+      <description>{{ object.description }}</description>
+   </book>
+   {% endfor %}
+ </catalog>
+ </xml>
