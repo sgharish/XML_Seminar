@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<environment xmlns="http://drivebuild.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://drivebuild.com ../drivebuild.xsd">
+   <author>Harish</author>
+   <timeOfDay>0</timeOfDay>
+   <lanes>
+      <lane>
+         {% for laneSegment in laneSegments %}
+         <laneSegment x="{{laneSegment.x}}" y = "{{laneSegment.y}}" width ="4"/>
+         {%endfor%}
+         <!--the end of the road segment -->
+      </lane>
+   </lanes>
+   <obstacles>
+      <!-- four differet types are been placed at selected points-->
+      {% for cubes in cube %}
+      <cube x= "{{cubes.x}}" y = "{{cubes.y}}" width = "1" length = "5" height = "4" />
+      {%endfor%}
+      <!-- A cube has been created at the end of the road to check the control of the vechile -->
+      {% for cylinders in cylinder %}
+      <cylinder x ="{{cylinders.x}}" y="{{cylinders.y}}" radius = "2" height = "6" />
+      {%endfor%}
+      {% for cones in cone %}
+      <cone x ="{{cones.x}}" y ="{{cones.y}}" baseRadius = "0.5"  height ="2"/>
+      {%endfor%}
+      {% for bumps in bump %}
+      <bump x="{{bumps.x}}" y = "{{bumps.y}}" width = "1" length = "4" height = "0.1" upperLength = "3.5" upperWidth = "0.5"/>
+      {%endfor%}
+
+<!-- speed breaker -->
+   </obstacles>
+</environment>

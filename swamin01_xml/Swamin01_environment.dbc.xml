@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<environment xmlns="http://drivebuild.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://drivebuild.com ../drivebuild.xsd">
+   <author>Harish</author>
+   <timeOfDay>0</timeOfDay>
+   <lanes>
+      <lane>
+         
+         <laneSegment x="17" y = "39" width ="4"/>
+         
+         <laneSegment x="41" y = "39" width ="4"/>
+         
+         <laneSegment x="70" y = "39" width ="4"/>
+         
+         <laneSegment x="79" y = "39" width ="4"/>
+         
+         <laneSegment x="97" y = "39" width ="4"/>
+         
+         <laneSegment x="97" y = "92" width ="4"/>
+         
+         <laneSegment x="117" y = "74" width ="4"/>
+         
+         <laneSegment x="151" y = "81" width ="4"/>
+         
+         <laneSegment x="161" y = "103" width ="4"/>
+         
+         <laneSegment x="186" y = "69" width ="4"/>
+         
+         <!--the end of the road segment -->
+      </lane>
+   </lanes>
+   <obstacles>
+      <!-- four differet types are been placed at selected points-->
+      
+      <cube x= "186" y = "69" width = "1" length = "5" height = "4" />
+      
+      <cube x= "70" y = "36" width = "1" length = "5" height = "4" />
+      
+      <!-- A cube has been created at the end of the road to check the control of the vechile -->
+      
+      <cylinder x ="156.0" y="92.0" radius = "2" height = "6" />
+      
+      
+      
+      <bump x="158" y = "100" width = "1" length = "4" height = "0.1" upperLength = "3.5" upperWidth = "0.5"/>
+      
+
+<!-- speed breaker -->
+   </obstacles>
+</environment>

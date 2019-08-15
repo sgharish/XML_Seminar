@@ -1,0 +1,46 @@
+<criteria xmlns="http://drivebuild.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://drivebuild.com ../drivebuild.xsd">
+ <author>Harish</author>
+ <version>1</version>
+ <name>LaneTest</name>
+ <environment>updated_road.xml</environment>
+ <stepsPerSecond>10</stepsPerSecond>
+ <aiFrequency>50</aiFrequency>
+ <participants>
+  <participant id="ego" model="ETK800">
+   
+   <initialState x="17" y="39" movementMode="AUTONOMOUS" orientation="90"/>
+   
+   <ai>
+    <position id="egoPosition"/>
+    <speed id="egoSpeed"/>
+    <steeringAngle id="egoSteeringAngle"/>
+    <camera id="egoFrontCamera" width="800" height="600" fov="60" direction="FRONT"/>
+    <lidar id="egoLidar" radius="200"/>
+    <laneCenterDistance id="egoLaneDist"/>
+   </ai>
+   <movement>
+    <!--  Definition of the movement of this participant  -->
+    
+    <waypoint x="17" y="39" movementMode="AUTONOMOUS" tolerance="1"/>
+
+   </movement>
+  </participant>
+ </participants>
+<!-- <precondition>
+
+ </precondition>-->
+ <success>
+  
+  
+  <scArea participant="ego" points="(161,103);(186,69);(17,39)"/>
+  
+  
+  
+ </success>
+ <failure>
+  <or>
+   <scDamage participant="ego"/>
+   <scLane participant="ego" onLane="offroad"/>
+  </or>
+ </failure>
+</criteria>

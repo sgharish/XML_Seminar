@@ -1,0 +1,46 @@
+<criteria xmlns="http://drivebuild.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://drivebuild.com ../drivebuild.xsd">
+ <author>Harish</author>
+ <version>1</version>
+ <name>LaneTest</name>
+ <environment>updated_road.xml</environment>
+ <stepsPerSecond>10</stepsPerSecond>
+ <aiFrequency>50</aiFrequency>
+ <participants>
+  <participant id="ego" model="ETK800">
+   {% for starts in start %}
+   <initialState x="{{starts.x}}" y="{{starts.y}}" movementMode="AUTONOMOUS" orientation="90"/>
+   {%endfor%}
+   <ai>
+    <position id="egoPosition"/>
+    <speed id="egoSpeed"/>
+    <steeringAngle id="egoSteeringAngle"/>
+    <camera id="egoFrontCamera" width="800" height="600" fov="60" direction="FRONT"/>
+    <lidar id="egoLidar" radius="200"/>
+    <laneCenterDistance id="egoLaneDist"/>
+   </ai>
+   <movement>
+    <!--  Definition of the movement of this participant  -->
+    {%for starts in start%}
+    <waypoint x="{{starts.x}}" y="{{starts.y}}" movementMode="AUTONOMOUS" tolerance="1"/>
+
+   </movement>
+  </participant>
+ </participants>
+<!-- <precondition>
+
+ </precondition>-->
+ <success>
+  {% for last in lasts %}
+  {%for lastv in lasty%}
+  <scArea participant="ego" points="({{last.x}},{{last.y}});({{lastv.x}},{{lastv.y}});({{starts.x}},{{starts.y}})"/>
+  {%endfor%}
+  {%endfor%}
+  {%endfor%}
+ </success>
+ <failure>
+  <or>
+   <scDamage participant="ego"/>
+   <scLane participant="ego" onLane="offroad"/>
+  </or>
+ </failure>
+</criteria>
