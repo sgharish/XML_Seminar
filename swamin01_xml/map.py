@@ -13,8 +13,8 @@ temp_ev =  Environment(loader=FileSystemLoader(template_path))
 x_cor = np.random.randint(0,200,size=(10))
 y_cor = np.random.randint(0,100,size=(10))
 
-print(x_cor)
-print(y_cor)
+#print(x_cor)
+#print(y_cor)
 
 
 def bubbleSort(arr):
@@ -42,13 +42,13 @@ x_ode = bubbleSort(x_cor)
 def xmod(arr):
     for i in range(6,10):
         if (arr[i]-arr[i-1]) <= 30 :
-            arr[i] = arr[i] + 20
+            arr[i] = arr[i] + 40
     return arr
 
-print(x_ode)
+#print(x_ode)
 
 x_de = xmod(x_ode)
-print(x_de)
+#print(x_de)
 
 def y_ode(arr):
     n = len(arr)
@@ -67,7 +67,7 @@ def y_ode(arr):
 
 y_ods = y_ode(y_cor)
 w = 4
-print(y_ods)
+#print(y_ods)
 
 def create_la():
     laneSegments = []
