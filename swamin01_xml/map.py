@@ -238,10 +238,14 @@ def criteria():
 class write:
     def getTest(self):
         xml_w = xml_temp()
+        test_file_paths = []
         save_path_file = os.path.join(CURRENT_DIR, "Swamin01_environment.dbe.xml")
+        test_file_paths.append(save_path_file)
         with open(save_path_file,"w") as f:
             f.write(xml_w)
         criteria_w = criteria()
         save_path =  os.path.join(CURRENT_DIR, "Swamin01_crite.dbc.xml")
+        test_file_paths.append(save_path)
         with open(save_path,"w") as f:
             f.write(criteria_w)
+        return test_file_paths
