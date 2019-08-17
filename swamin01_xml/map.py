@@ -245,6 +245,3 @@ class write:
         save_path =  os.path.join(CURRENT_DIR, "Swamin01_crite.dbc.xml")
         with open(save_path,"w") as f:
             f.write(criteria_w)
-
-w = write()
-w.getTest()
