@@ -38,9 +38,5 @@
   {%endfor%}
  </success>
  <failure>
-  <or>
-   <scDamage participant="ego"/>
-   <scLane participant="ego" onLane="offroad"/>
-  </or>
  </failure>
 </criteria>
