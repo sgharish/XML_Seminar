@@ -7,8 +7,9 @@ from xml.dom import minidom
 
 XML_File = 'test.xml'
 CRITERIA_File = 'criteria.xml'
-template_path ='H:\BeamNG\swamin01_xml\Template_e'
-temp_ev =  Environment(loader=FileSystemLoader(template_path))
+CURRENT_DIR = os.path.dirname(__file__)
+template_path = os.path.join(CURRENT_DIR, "Template_e")
+temp_ev = Environment(loader=FileSystemLoader(template_path))
 
 x_cor = np.random.randint(0,200,size=(10))
 y_cor = np.random.randint(0,100,size=(10))
@@ -237,11 +238,11 @@ def criteria():
 class write:
     def getTest(self):
         xml_w = xml_temp()
-        save_path_file = "Swamin01_environment.dbc.xml"
+        save_path_file = os.path.join(CURRENT_DIR, "Swamin01_environment.dbe.xml")
         with open(save_path_file,"w") as f:
             f.write(xml_w)
         criteria_w = criteria()
-        save_path = "Swamin01_crite.dbc.xml"
+        save_path =  os.path.join(CURRENT_DIR, "Swamin01_crite.dbc.xml")
         with open(save_path,"w") as f:
             f.write(criteria_w)
 
