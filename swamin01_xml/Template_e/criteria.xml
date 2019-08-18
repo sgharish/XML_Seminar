@@ -2,7 +2,7 @@
  <author>Harish</author>
  <version>1</version>
  <name>LaneTest</name>
- <environment>updated_road.xml</environment>
+ <environment>Swamin01_environment.dbe.xml</environment>
  <stepsPerSecond>10</stepsPerSecond>
  <aiFrequency>50</aiFrequency>
  <participants>
@@ -38,9 +38,5 @@
   {%endfor%}
  </success>
  <failure>
-  <or>
-   <scDamage participant="ego"/>
-   <scLane participant="ego" onLane="offroad"/>
-  </or>
  </failure>
 </criteria>
