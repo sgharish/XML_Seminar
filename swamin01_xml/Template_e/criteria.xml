@@ -8,7 +8,7 @@
  <participants>
   <participant id="ego" model="ETK800">
    {% for starts in start %}
-   <initialState x="{{starts.x}}" y="{{starts.y}}" movementMode="AUTONOMOUS" orientation="90"/>
+   <initialState x="{{starts.x}}" y="{{starts.y}}" movementMode="AUTONOMOUS" orientation="0"/>
    {%endfor%}
    <ai>
     <position id="egoPosition"/>
@@ -21,17 +21,17 @@
    <movement>
     <!--  Definition of the movement of this participant  -->
     {%for starts in start%}
+    {% for last in lasts %}
+    {%for lastv in lasty%}
     <waypoint x="{{starts.x}}" y="{{starts.y}}" movementMode="AUTONOMOUS" tolerance="1"/>
-
+    <waypoint x="{{lastv.x}}" y="{{lastv.y}}" movementMode="AUTONOMOUS" tolerance="1"/>
+    <waypoint x="{{last.x}}" y="{{last.y}}" movementMode="AUTONOMOUS" tolerance="1"/>
    </movement>
   </participant>
  </participants>
 <!-- <precondition>
-
  </precondition>-->
  <success>
-  {% for last in lasts %}
-  {%for lastv in lasty%}
   <scArea participant="ego" points="({{last.x}},{{last.y}});({{lastv.x}},{{lastv.y}});({{starts.x}},{{starts.y}})"/>
   {%endfor%}
   {%endfor%}
