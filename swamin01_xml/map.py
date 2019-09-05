@@ -237,6 +237,7 @@ def criteria():
 
 class write:
     def getTest(self):
+        from pathlib import Path
         xml_w = xml_temp()
         test_file_paths = []
         save_path_file = os.path.join(CURRENT_DIR, "Swamin01_environment.dbe.xml")
@@ -248,4 +249,4 @@ class write:
         test_file_paths.append(save_path)
         with open(save_path,"w") as f:
             f.write(criteria_w)
-        return test_file_paths
+        return [Path(path) for path in test_file_paths]
