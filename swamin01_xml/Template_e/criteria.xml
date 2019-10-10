@@ -16,7 +16,7 @@
     <steeringAngle id="egoSteeringAngle"/>
     <camera id="egoFrontCamera" width="800" height="600" fov="60" direction="FRONT"/>
     <lidar id="egoLidar" radius="200"/>
-    <laneCenterDistance id="egoLaneDist"/>
+    <roadCenterDistance id="egoLaneDist"/>
    </ai>
    <movement>
     <!--  Definition of the movement of this participant  -->
